@@ -3,6 +3,7 @@ import time
 
 t = turtle.Turtle()
 win = turtle.Screen()
+t.setpos(0,0)
 t.speed(0)
 
 # head
@@ -75,7 +76,17 @@ t.down()
 t.circle(5)
 
 t.up()
-t.fd(20)
+t.lt(90)
+t.fd(2)
+t.rt(90)
+t.fd(30)
+t.rt(180)
+t.down()
 
+# Mouth
+t.circle(15, 180)
+
+t.up()
+t.fd(100)
 
 win.exitonclick()
