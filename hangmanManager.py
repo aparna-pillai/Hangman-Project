@@ -1,7 +1,8 @@
 import tkinter
-from homePage import home_page
-from instructionsPage import instruction_page
-from categoriesPage import categories_page
+from homePage import Home_page
+from instructionsPage import Instruction_page
+from categoriesPage import Categories_page
+from playScreen import Play_screen
 
 
 class Hangman_Manager(object):
@@ -9,32 +10,31 @@ class Hangman_Manager(object):
        self.root = tkinter.Tk()
        self.current_screen = None
 
-   def setup_homePage(self):
+   def load_page(self):
        self.root.title("Welcome to Hangman!")
-       self.current_screen = home_page(self.root, self.onclose_homePage)
+       self.current_screen = Home_page(self.root, self.call_next, self.other_call_next)
 
-   def onclose_homePage(self):
+   def call_next(self):
        self.current_screen.destroy()
+       self.elmo = Instruction_page(self.root,self.return_to_home)
+
+   def return_to_home(self):
+       self.elmo.destroy()
+       self.current_screen = Home_page(self.root, self.call_next, self.other_call_next)
 
 
-   def onclose_instructions(self):
+   def other_call_next(self):
        self.current_screen.destroy()
-       categories_page.main()
+       self.mickey = Categories_page(self.root,self.call_for_main_game)
 
 
+   def call_for_main_game(self, choice):
+       self.mickey.destroy()
+       self.choice = choice
+       self.goofy = Play_screen(self.root,self.choice)
 
-   def onclose_categories(self):
-        self.current_screen.destroy()
-
-        self.setup_game()
-
-   def setup_game(self):
-       pass
 
 def main():
    hangman = Hangman_Manager()
-   hangman.setup_homePage()
+   hangman.load_page()
    hangman.root.mainloop()
-
-
-main()
