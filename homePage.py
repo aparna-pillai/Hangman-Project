@@ -1,13 +1,11 @@
 from tkinter import *
-from instructionsPage import instruction_page
-from categoriesPage import categories_page
+class Home_page(Frame):
 
-class home_page(Frame):
-
-   def __init__(self, master, call_on_selected):
+   def __init__(self, master, call_on_selected, call_on_other_selected):
        """Initialize Frame."""
        self.call_on_selected = call_on_selected
-       super(home_page, self).__init__(master)
+       self.call_on_other_selected = call_on_other_selected
+       super(Home_page, self).__init__(master)
        self.grid()
        self.create_widgets()
 
@@ -32,7 +30,7 @@ class home_page(Frame):
 
        Button(self, text="single player",
               font="fixedsys 15", bd=5,
-              bg="Turquoise", command=self.play
+              bg="Turquoise", command=self.single_player
               ).grid(row=3, column=1, sticky=N)
 
        Label(self, text=""
@@ -43,15 +41,8 @@ class home_page(Frame):
               bg="#%2x%2x%2x" % (128, 192, 200), command=self.instructions
               ).grid(row=5, column=1, sticky=N)
 
-   def play(self):
-       self.call_on_selected()
-       categories_page.main(self)
+   def single_player(self):
+       self.call_on_other_selected()
 
    def instructions(self):
-       self.root = Tk()
-       self.root.title("Instructions Page")
-       self.current_screen = instruction_page(self.root, self.onclose_instructions)
        self.call_on_selected()
-
-   def onclose_instructions(self):
-       categories_page.main()
