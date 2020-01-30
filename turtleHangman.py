@@ -74,5 +74,7 @@ t.down()
 # Eye 2
 t.circle(5)
 
+t.up()
+t.fd(20)
 
 win.exitonclick()
