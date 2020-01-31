@@ -19,13 +19,15 @@ class Play_screen(Frame):
 
         for letter in alphabet:
             self.letter = Button(self, text=letter, fg="white", bg="navy",
-                   command=self.a
-                   ).grid(row=20, column=column, sticky=N)
+                                 command=self.a
+                                 ).grid(row=20, column=column, sticky=N)
 
             Label(self, text=""
-                  ).grid(row=20, column=column+1, sticky=N)
+                  ).grid(row=20, column=column + 1, sticky=N)
 
             column += 2
+
+
 """
         Button(self, text="B", fg="white", bg="navy",
                command=self.b
@@ -100,12 +102,16 @@ class Play_screen(Frame):
         Label(self, text=""
               ).grid(row=20, column=21, sticky=N)
 """
-# Is there now way to make a function called def letters(self): and have it work on each button as specified.
-    # Maybe name the buttons like self.a, self.b, etc.?
-    # Cause this is REALLY long
 
-    def letter_click():
-        pass
+
+# Is there now way to make a function called def letters(self): and have it work on each button as specified.
+# Maybe name the buttons like self.a, self.b, etc.?
+# Cause this is REALLY long
+
+def letter_click():
+    pass
+
+
 """
     def a(self):
         pass
