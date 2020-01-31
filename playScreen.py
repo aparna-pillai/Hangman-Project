@@ -19,7 +19,7 @@ class Play_screen(Frame):
 
         for letter in alphabet:
             self.letter = Button(self, text=letter, fg="white", bg="navy",
-                                 command=self.a
+                                 command=self.letter_click
                                  ).grid(row=20, column=column, sticky=N)
 
             Label(self, text=""
@@ -28,88 +28,13 @@ class Play_screen(Frame):
             column += 2
 
 
-"""
-        Button(self, text="B", fg="white", bg="navy",
-               command=self.b
-               ).grid(row=20, column=2, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=3, sticky=N)
-        Button(self, text="C", fg="white", bg="navy",
-               command=self.c
-               ).grid(row=20, column=4, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=5, sticky=N)
-        Button(self, text="D", fg="white", bg="navy",
-               command=self.d
-               ).grid(row=20, column=6, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=7, sticky=N)
-        Button(self, text="E", fg="white", bg="navy",
-               command=self.e
-               ).grid(row=20, column=8, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=9, sticky=N)
-        Button(self, text="F", fg="white", bg="navy",
-               command=self.f
-               ).grid(row=20, column=10, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=11, sticky=N)
-        Button(self, text="G", fg="white", bg="navy",
-               command=self.g
-               ).grid(row=20, column=12, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=13, sticky=N)
-        Button(self, text="H", fg="white", bg="navy",
-               command=self.h
-               ).grid(row=20, column=10, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=11, sticky=N)
-        Button(self, text="I", fg="white", bg="navy",
-               command=self.i
-               ).grid(row=20, column=12, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=13, sticky=N)
-        Button(self, text="J", fg="white", bg="navy",
-               command=self.j
-               ).grid(row=20, column=14, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=15, sticky=N)
-        Button(self, text="K", fg="white", bg="navy",
-               command=self.k
-               ).grid(row=20, column=16, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=17, sticky=N)
-        Button(self, text="L", fg="white", bg="navy",
-               command=self.l
-               ).grid(row=20, column=18, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=19, sticky=N)
-        Button(self, text="M", fg="white", bg="navy",
-               command=self.m
-               ).grid(row=20, column=20, sticky=N)
-
-        Label(self, text=""
-              ).grid(row=20, column=21, sticky=N)
-"""
-
-
 # Is there now way to make a function called def letters(self): and have it work on each button as specified.
 # Maybe name the buttons like self.a, self.b, etc.?
 # Cause this is REALLY long
 
-def letter_click():
-    pass
+
+    def letter_click(self):
+        pass
 
 
 """
