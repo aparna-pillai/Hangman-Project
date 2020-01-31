@@ -38,3 +38,5 @@ def main():
    hangman = Hangman_Manager()
    hangman.load_page()
    hangman.root.mainloop()
+
+main()

@@ -11,4 +11,11 @@ class Play_screen(Frame):
        self.create_widgets()
 
    def create_widgets(self):
+       Button(self, text="A", fg = "white",bg = "navy",
+              command=self.a
+              ).grid(row=20, column=0, sticky=N)
+       Label(self, text="         "
+             ).grid(row=20, column=1, sticky=N)
+
+   def a(self):
        pass

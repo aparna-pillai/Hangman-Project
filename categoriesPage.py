@@ -79,4 +79,14 @@ class Categories_page(Frame):
        choice = choice_list[num]
        self.call_on_next(choice)
    def choose(self):
-      pass
+       self.choose_box = Text(self, width = 20, height=4, wrap=WORD)
+       Label(self, text="Enter your word or phrase here!\nSeparate your words with an underscore.\nPlease don't use any symbols in your message.\n"
+                        "Ex: Harry_Potter\nWhen you're done, hit the 'Done!' Button!"
+             ).grid(row=5, column=1, sticky=N)
+       self.choose_box.grid(row=6, column=0, columnspan=4)
+       Button(self, text="Done!",
+              command=self.done
+              ).grid(row=7, column=1, sticky=N)
+   def done(self):
+       choice = self.choose_box.get("0.0",END)
+       self.call_on_next(choice)
