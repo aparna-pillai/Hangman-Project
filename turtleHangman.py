@@ -3,7 +3,7 @@ import time
 
 t = turtle.Turtle()
 win = turtle.Screen()
-t.setpos(0,0)
+t.setpos(0, 0)
 t.speed(0)
 
 # head
