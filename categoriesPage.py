@@ -8,38 +8,34 @@ class Categories_page(Frame):
        super(Categories_page, self).__init__(master)
        self.grid()
        self.create_widgets()
-       master.title("Categories!")
+       master.title("Categories")
 
    def create_widgets(self):
-       Button(self, text="food",
+       Label(self, text="",
+             ).grid(row=0, column=0, sticky=N)
+       Label(self, text="",
+             ).grid(row=0, column=2, sticky=N)
+       Button(self, text="Food", font = "Courier 20", fg="Dodger Blue",
               command=self.food_choice
-              ).grid(row=2, column=0, sticky=N)
-       Button(self, text="animals",
-              command=self.animal_choice
-              ).grid(row=0, column=2, sticky=N)
-       Button(self, text="movies",
-              command=self.movie_choice
-              ).grid(row=0, column=0, sticky=N)
-       Button(self, text="famous people",
-              command=self.famous_people
-              ).grid(row=2, column=2, sticky=N)
-       Button(self, text="choose your own",
-              command=self.choose
-              ).grid(row=4, column=0, sticky=N)
-       Label(self, text="         "
-             ).grid(row=0, column=1, sticky=N)
-       Label(self, text="         "
-             ).grid(row=1, column=0, sticky=N)
-       Label(self, text="         "
-             ).grid(row=1, column=1, sticky=N)
-       Label(self, text="         "
-             ).grid(row=1, column=2, sticky=N)
-       Label(self, text="         "
+              ).grid(row=1, column=1, sticky=N)
+       Label(self, text="",
              ).grid(row=2, column=1, sticky=N)
-       Label(self, text="         "
-             ).grid(row=3, column=1, sticky=N)
-       Label(self, text="         "
-             ).grid(row=3, column=2, sticky=N)
+       Button(self, text="Animals", font = "Courier 20", fg="Dodger Blue",
+              command=self.animal_choice
+              ).grid(row=3, column=1, sticky=N)
+       Label(self, text="",
+             ).grid(row=4, column=1, sticky=N)
+       Button(self, text="Movies", font = "Courier 20", fg="Dodger Blue",
+              command=self.movie_choice
+              ).grid(row=5, column=1, sticky=N)
+       Label(self, text="",
+             ).grid(row=6, column=1, sticky=N)
+       Button(self, text="Famous People", font = "Courier 20", fg="Dodger Blue",
+              command=self.famous_people
+              ).grid(row=7, column=1, sticky=N)
+       Label(self, text="",
+             ).grid(row=8, column=1, sticky=N)
+
 
    def food_choice(self):
        text_file = open("food.txt","r")

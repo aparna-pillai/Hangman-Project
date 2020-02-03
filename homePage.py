@@ -29,8 +29,7 @@ class Home_page(Frame):
              ).grid(row=2, column=1, sticky=N)
 
        Button(self, text="Play",
-              font="Courier 23", bd=5,
-              bg="Turquoise", command=self.single_player
+              font="Courier 23", bd=5, command=self.single_player
               ).grid(row=3, column=1, sticky=N)
 
        Label(self, text="", bg = "LightSteelBlue2"
@@ -38,7 +37,7 @@ class Home_page(Frame):
 
        Button(self, text="Instructions",
               font="Courier 23", bd=5,
-              bg="#%2x%2x%2x" % (128, 192, 200), command=self.instructions
+              command=self.instructions
               ).grid(row=5, column=1, sticky=N)
 
        Label(self, text="", bg="LightSteelBlue2"
