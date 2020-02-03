@@ -55,6 +55,7 @@ class Play_screen(Frame):
         self.guess_list = list
         for item in self.guess_list:
             if item == letter:
+                pass
 
 
 
