@@ -28,9 +28,8 @@ class Play_screen(Frame):
 
         Label(self,
               text=let_str, font="Courier 20 bold",
-              fg="Navy Blue").grid(row=1, column=1, columnspan = 1000, sticky=N)
-        Label(self,
-              text="", font="Courier 20 bold").grid(row=2, column=1, sticky=N)
+              fg="Sea Green").grid(row=1, column=1, columnspan = 1000, sticky=N)
+        Label(self, text="").grid(row=2, column=1, sticky=N)
 
         Drawing.stand(self)
         alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
@@ -41,7 +40,7 @@ class Play_screen(Frame):
 
         for letter in alphabet:
             if column <= 26:
-                self.letter = Button(self, text=letter, fg="white", bg="navy",
+                self.letter = Button(self, text=letter, fg="Medium Sea Green", bg="Gainsboro",
                                     command=self.create_letter_click_command(letter,guess_list)
                                     ).grid(row=20, column=column, sticky=N)
 
@@ -50,7 +49,7 @@ class Play_screen(Frame):
                     ).grid(row=20, column=column + 1, sticky=N)
                 column += 2
             else:
-                self.letter = Button(self, text=letter, fg="white", bg="navy",
+                self.letter = Button(self, text=letter, fg="Medium Sea Green", bg="Gainsboro",
                                      command=self.create_letter_click_command(letter,guess_list)
                                      ).grid(row=22, column=column2, sticky=N)
 
@@ -74,8 +73,7 @@ class Play_screen(Frame):
                 for item in self.guess_list:
                     pass
                 Label(self,
-                      text=let_str, font="Courier 20 bold",
-                      fg="Navy Blue").grid(row=1, column=1, columnspan=1000, sticky=N)
+                      text=let_str, font="Courier 20 bold", fg="Sky Blue").grid(row=1, column=1, columnspan=1000, sticky=N)
 
             letter_count += 1
 
