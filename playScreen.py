@@ -31,6 +31,7 @@ class Play_screen(Frame):
                                     command=self.create_letter_click_command(letter,guess_list)
                                     ).grid(row=20, column=column, sticky=N)
 
+
                 Label(self, text=""
                     ).grid(row=20, column=column + 1, sticky=N)
                 column += 2
@@ -55,3 +56,9 @@ class Play_screen(Frame):
         for item in self.guess_list:
             if item == letter:
                 pass
+
+
+
+
+
+
