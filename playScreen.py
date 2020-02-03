@@ -14,6 +14,7 @@ class Play_screen(Frame):
     def create_widgets(self):
 
         guess_list = []
+
         for letter in self.choice:
             if letter!="\n":
                 guess_list.append(letter)
@@ -66,7 +67,9 @@ class Play_screen(Frame):
 
     def letter_click(self,letter,list):
         self.guess_list = list
-
+        for item in self.guess_list:
+            if item == letter:
+                pass
 
 
 
