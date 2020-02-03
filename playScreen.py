@@ -5,13 +5,19 @@ class Play_screen(Frame):
 
     def __init__(self, master, choice):
         """Initialize Frame."""
-        self.choice = choice
+        self.choice = str(choice)
         super(Play_screen, self).__init__(master)
         master.title("Play Screen!")
         self.grid()
         self.create_widgets()
 
     def create_widgets(self):
+        guess_list = []
+
+        for letter in self.choice:
+            if letter!="\n":
+                guess_list.append(letter)
+
         Drawing.stand(self)
         alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
                     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -22,7 +28,7 @@ class Play_screen(Frame):
         for letter in alphabet:
             if column <= 25:
                 self.letter = Button(self, text=letter, fg="white", bg="navy",
-                                    command=self.create_letter_click_command(letter)
+                                    command=self.create_letter_click_command(letter,guess_list)
                                     ).grid(row=20, column=column, sticky=N)
 
 
@@ -31,7 +37,7 @@ class Play_screen(Frame):
                 column += 2
             else:
                 self.letter = Button(self, text=letter, fg="white", bg="navy",
-                                     command=self.create_letter_click_command(letter)
+                                     command=self.create_letter_click_command(letter,guess_list)
                                      ).grid(row=22, column=column2, sticky=N)
 
                 Label(self, text=""
@@ -42,9 +48,16 @@ class Play_screen(Frame):
               ).grid(row=21, sticky=N)
 
 
-    def create_letter_click_command(self,l):
-        return lambda : self.letter_click(l)
+    def create_letter_click_command(self,l,list):
+        return lambda : self.letter_click(l,list)
 
-    def letter_click(self,letter):
-        print(letter)
+    def letter_click(self,letter,list):
+        self.guess_list = list
+        for item in self.guess_list:
+            if item == letter:
+
+
+
+
+
 
