@@ -18,49 +18,47 @@ class Drawing(Frame):
         self.mouth()
 
 
-        def stand():
-            t = turtle.Turtle()
-            win = turtle.Screen()
-            t.setpos(0, 0)
-            t.speed(0)
-            t.up()
-            t.lt(180)
-            t.fd(180)
-            t.lt(90)
-            t.fd(260)
-            t.rt(90)
-            t.down()
-            t.fd(50)
-            t.rt(180)
-            t.fd(100)
-            t.lt(180)
-            t.fd(50)
-            t.rt(90)
-            t.fd(500)
-            t.rt(90)
-            t.fd(180)
-            t.rt(90)
-            t.fd(50)
-            t.up()
-            t.fd(100)
-            t.lt(90)
-            t.down()
-
-# head
-t.circle(50)
-
-t.rt(90)
-
-    def body():
+    def stand(self):
         t = turtle.Turtle()
         win = turtle.Screen()
         t.setpos(0, 0)
         t.speed(0)
         t.up()
-        t.fd(200)
-
+        t.lt(180)
+        t.fd(180)
+        t.lt(90)
+        t.fd(260)
+        t.rt(90)
+        t.down()
+        t.fd(50)
         t.rt(180)
+        t.fd(100)
+        t.lt(180)
+        t.fd(50)
+        t.rt(90)
+        t.fd(500)
+        t.rt(90)
+        t.fd(180)
+        t.rt(90)
+        t.fd(50)
         t.up()
+        t.fd(100)
+        t.lt(90)
+        t.down()
+
+    def head(self):
+        t = turtle.Turtle()
+        win = turtle.Screen()
+        t.setpos(0, 0)
+        t.speed(0)
+        t.circle(50)
+        t.rt(90)
+
+# body
+t.fd(200)
+
+t.rt(180)
+t.up()
 
 # Arm 1
 t.fd(100)
