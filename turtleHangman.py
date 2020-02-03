@@ -9,6 +9,7 @@ class Drawing(Frame):
         self.stand()
         self.head()
         self.body()
+
         # self.arm1()
         # self.arm2()
         # self.leg1()

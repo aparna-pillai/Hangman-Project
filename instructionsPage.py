@@ -6,13 +6,13 @@ class Instruction_page(Frame):
        """Initialize Frame."""
        self.return_home = return_home
        super(Instruction_page, self).__init__(master)
-       master.title("Instruction Page")
+       master.title("Instructions Page")
        self.grid()
        self.create_widgets()
 
 
    def create_widgets(self):
-       self.story_txt = Text(self, width=100, height=18, wrap=WORD)
+       self.story_txt = Text(self, font= "Courier 20", fg="Dark Cyan", width=100, height=18, wrap=WORD)
        self.story_txt.grid(row=0, column=0, columnspan=4)
 
        instructions = '''Are you ready to play one of the best games in the world?\n\nWith this version of Hangman, you get a chance to
@@ -24,7 +24,9 @@ friend, you can also click the "choose your own word" button to have your friend
 
        self.home_bttn = Button(self, text="home page", command=self.back_to_home
                           )
-       Button(self, text="home page",
+       Button(self, text="Home Page",
+              font="Courier 15",
+              fg="Dark Turquoise",
               command=self.back_to_home
               ).grid(row=5, column=0, sticky=W)
 

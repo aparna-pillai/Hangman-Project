@@ -28,18 +28,21 @@ class Home_page(Frame):
        Label(self, text="", bg = "LightSteelBlue2"
              ).grid(row=2, column=1, sticky=N)
 
-       Button(self, text="single player",
-              font="fixedsys 15", bd=5,
+       Button(self, text="Play",
+              font="Courier 23", bd=5,
               bg="Turquoise", command=self.single_player
               ).grid(row=3, column=1, sticky=N)
 
        Label(self, text="", bg = "LightSteelBlue2"
              ).grid(row=4, column=1, sticky=N)
 
-       Button(self, text="instructions",
-              font="fixedsys 15", bd=5,
+       Button(self, text="Instructions",
+              font="Courier 23", bd=5,
               bg="#%2x%2x%2x" % (128, 192, 200), command=self.instructions
               ).grid(row=5, column=1, sticky=N)
+
+       Label(self, text="", bg="LightSteelBlue2"
+             ).grid(row=6, column=1, sticky=N)
 
    def single_player(self):
        self.call_on_other_selected()

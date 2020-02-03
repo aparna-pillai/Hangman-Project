@@ -4,7 +4,6 @@ from instructionsPage import Instruction_page
 from categoriesPage import Categories_page
 from playScreen import Play_screen
 
-
 class Hangman_Manager(object):
     def __init__(self):
         self.root = tkinter.Tk()
@@ -30,7 +29,6 @@ class Hangman_Manager(object):
         self.mickey.destroy()
         self.choice = choice
         self.goofy = Play_screen(self.root, self.choice)
-
 
 def main():
     hangman = Hangman_Manager()
