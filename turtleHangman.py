@@ -18,7 +18,7 @@ class Drawing(Frame):
         self.mouth()
 
 
-        def self.stand():
+        def stand():
             t = turtle.Turtle()
             win = turtle.Screen()
             t.setpos(0, 0)
@@ -51,11 +51,16 @@ t.circle(50)
 
 t.rt(90)
 
-# body
-t.fd(200)
+    def body():
+        t = turtle.Turtle()
+        win = turtle.Screen()
+        t.setpos(0, 0)
+        t.speed(0)
+        t.up()
+        t.fd(200)
 
-t.rt(180)
-t.up()
+        t.rt(180)
+        t.up()
 
 # Arm 1
 t.fd(100)
