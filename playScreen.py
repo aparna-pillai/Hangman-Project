@@ -12,11 +12,24 @@ class Play_screen(Frame):
         self.create_widgets()
 
     def create_widgets(self):
-        guess_list = []
 
+        guess_list = []
         for letter in self.choice:
             if letter!="\n":
                 guess_list.append(letter)
+        let_str =""
+        for item in guess_list:
+            if item == "_":
+                let_str +=" "
+
+            else:
+                let_str += "_ "
+
+        Label(self,
+              text=let_str, font="Courier 20 bold",
+              fg="Navy Blue").grid(row=1, column=1, columnspan = 50, sticky=N)
+        Label(self,
+              text="", font="Courier 20 bold").grid(row=2, column=1, sticky=N)
 
         Drawing.stand(self)
         alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
@@ -53,8 +66,7 @@ class Play_screen(Frame):
 
     def letter_click(self,letter,list):
         self.guess_list = list
-        for item in self.guess_list:
-            if item == letter:
+
 
 
 
