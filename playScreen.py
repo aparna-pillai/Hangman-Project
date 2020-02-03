@@ -1,5 +1,6 @@
 from tkinter import *
-import turtle
+from turtleHangman import Drawing
+
 class Play_screen(Frame):
 
     def __init__(self, master, choice):
@@ -11,6 +12,7 @@ class Play_screen(Frame):
         self.create_widgets()
 
     def create_widgets(self):
+        Drawing.stand(self)
         alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
                     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
