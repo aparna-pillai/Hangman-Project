@@ -20,15 +20,16 @@ class Play_screen(Frame):
         for letter in alphabet:
             if column <= 25:
                 self.letter = Button(self, text=letter, fg="white", bg="navy",
-                                    command=self.letter_click
+                                    command=self.create_letter_click_command(letter)
                                     ).grid(row=20, column=column, sticky=N)
+
 
                 Label(self, text=""
                     ).grid(row=20, column=column + 1, sticky=N)
                 column += 2
             else:
                 self.letter = Button(self, text=letter, fg="white", bg="navy",
-                                     command=self.letter_click
+                                     command=self.create_letter_click_command(letter)
                                      ).grid(row=22, column=column2, sticky=N)
 
                 Label(self, text=""
@@ -38,10 +39,10 @@ class Play_screen(Frame):
         Label(self, text=""
               ).grid(row=21, sticky=N)
 
-# Is there now way to make a function called def letters(self): and have it work on each button as specified.
-# Maybe name the buttons like self.a, self.b, etc.?
-# Cause this is REALLY long
 
+    def create_letter_click_command(self,l):
+        return lambda : self.letter_click(l)
 
-    def letter_click(self):
-        pass
+    def letter_click(self,letter):
+        print(letter)
+
