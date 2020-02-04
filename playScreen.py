@@ -52,7 +52,7 @@ class Play_screen(Frame):
                 column += 2
             else:
                 self.letter = Button(self, text=letter, fg="Medium Sea Green", bg="Gainsboro",
-                                     command=self.create_letter_click_command(letter,guess_list, string)
+                                     command=self.create_letter_click_command(letter, guess_list, string)
                                      ).grid(row=22, column=column2, sticky=N)
 
                 Label(self, text=""
@@ -69,18 +69,20 @@ class Play_screen(Frame):
     def letter_click(self, letter, list, string):
         self.guess_list = list  # all the letters in the player's choice
         self.let_str = string
-        self.totalcount = 1
+        self.tries = 0
         self.bodypartcount = 0
 
         for item in self.guess_list:
             if letter != item:
                 self.let_str += "_ "
+                new_tries = self.tries + 1
             else:
-                self.totalcount = 0
                 self.let_str += letter
+                print(self.let_str)
 
-        if self.totalcount == 1:
-            pass
+        if new_tries > self.tries:
+            self.bodypartcount += 1
+
 
 # GO TO TURTLEHANGMAN.PY AND FINISH WRITING THE FUNCTIONS.
 
@@ -115,11 +117,3 @@ class Play_screen(Frame):
         #Label(self,
               #text=self.let_str, font="Courier 20 bold", fg="Sea Green").grid(row=1, column=1, columnspan=1000,
                                                                               #sticky=N)
-
-
-
-
-
-
-
-
