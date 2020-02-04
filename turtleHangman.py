@@ -9,8 +9,7 @@ class Drawing(Frame):
         self.stand()
         self.head()
         self.body()
-
-        # self.arm1()
+        self.arm1()
         # self.arm2()
         # self.leg1()
         # self.leg2()
@@ -50,7 +49,6 @@ class Drawing(Frame):
     def head(self):
         t = turtle.Turtle()
         win = turtle.Screen()
-        t.setpos(0, 0)
         t.speed(0)
         t.up()
         t.circle(50)
@@ -59,7 +57,6 @@ class Drawing(Frame):
     def body(self):
         t = turtle.Turtle()
         win = turtle.Screen()
-        t.setpos(0, 0)
         t.speed(0)
         t.up()
         t.fd(200)
@@ -67,18 +64,19 @@ class Drawing(Frame):
         t.rt(180)
         t.up()
 
-# # Arm 1
-# t.fd(100)
-#
-# t.rt(45)
-# t.down()
-# t.fd(100)
-# t.up()
-# t.rt(180)
-# t.fd(100)
-# t.rt(90)
-# t.down()
-#
+    def arm1(self):
+        t = turtle.Turtle()
+#        win = turtle.Screen()
+        t.fd(100)
+        t.rt(45)
+        t.down()
+        t.fd(100)
+        t.up()
+        t.rt(180)
+        t.fd(100)
+        t.rt(90)
+        t.down()
+
 # # Arm 2
 # t.fd(100)
 #
