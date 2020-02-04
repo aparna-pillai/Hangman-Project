@@ -1,6 +1,6 @@
 import turtle
 from tkinter import *
-import time
+
 
 class Drawing(Frame):
     def __init__(self, master):
@@ -10,13 +10,12 @@ class Drawing(Frame):
         self.head()
         self.body()
         self.arm1()
-        # self.arm2()
-        # self.leg1()
-        # self.leg2()
-        # self.eye1()
-        # self.eye2()
-        # self.mouth()
-
+        self.arm2()
+        self.leg1()
+        self.leg2()
+        self.eye1()
+        self.eye2()
+        self.mouth()
 
     def stand(self):
         self.t = turtle.Turtle()
