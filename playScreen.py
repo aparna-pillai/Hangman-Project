@@ -76,9 +76,3 @@ class Play_screen(Frame):
                       text=let_str, font="Courier 20 bold", fg="Sky Blue").grid(row=1, column=1, columnspan=1000, sticky=N)
 
             letter_count += 1
-
-
-
-
-
-
