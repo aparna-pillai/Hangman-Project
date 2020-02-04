@@ -26,7 +26,7 @@ class Play_screen(Frame):
             else:
                 let_str += "_ "
 
-        Label(self,
+        self.guess_label = Label(self,
               text=let_str, font="Courier 20 bold",
               fg="Sea Green").grid(row=1, column=1, columnspan = 1000, sticky=N)
         Label(self, text="").grid(row=2, column=1, sticky=N)
@@ -41,7 +41,7 @@ class Play_screen(Frame):
         for letter in alphabet:
             if column <= 26:
                 self.letter = Button(self, text=letter, fg="Medium Sea Green", bg="Gainsboro",
-                                    command=self.create_letter_click_command(letter,guess_list)
+                                    command=self.create_letter_click_command(letter,guess_list,self.guess_label)
                                     ).grid(row=20, column=column, sticky=N)
 
 
@@ -50,7 +50,7 @@ class Play_screen(Frame):
                 column += 2
             else:
                 self.letter = Button(self, text=letter, fg="Medium Sea Green", bg="Gainsboro",
-                                     command=self.create_letter_click_command(letter,guess_list)
+                                     command=self.create_letter_click_command(letter,guess_list, self.guess_label)
                                      ).grid(row=22, column=column2, sticky=N)
 
                 Label(self, text=""
@@ -61,21 +61,22 @@ class Play_screen(Frame):
               ).grid(row=21, sticky=N)
 
 
-    def create_letter_click_command(self,l,list):
-        return lambda : self.letter_click(l,list)
+    def create_letter_click_command(self,l,list,label):
+        return lambda : self.letter_click(l,list,label)
 
-    def letter_click(self,letter,list):
-        self.guess_list = list
+    def letter_click(self,letter,list,label):
+        self.label = label #NEED TO DESTROY THIS LABEL
+        self.guess_list = list #all the letters in the player's choice
+        self.let_str = ""
         for item in self.guess_list:
-            letter_count = 0
-            if item == letter:
-                let_str = ""
-                for item in self.guess_list:
-                    pass
-                Label(self,
-                      text=let_str, font="Courier 20 bold", fg="Sky Blue").grid(row=1, column=1, columnspan=1000, sticky=N)
+            if letter != item:
+                self.let_str += "_ "
+            else:
+                self.let_str += letter
+        Label(self,
+              text=self.let_str, font="Courier 20 bold", fg="Sea Green").grid(row=1, column=1, columnspan=1000, sticky=N)
 
-            letter_count += 1
+
 
 
 
