@@ -28,7 +28,7 @@ class Play_screen(Frame):
             else:
                 self.let_str += "_ "
 
-        Drawing.stand()
+        Drawing.stand(self)
 
         alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
                     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -86,6 +86,7 @@ class Play_screen(Frame):
             else:
                 self.let_str += letter
                 self.tries += 1
+        print(self.guess_list)
 
         if self.tries == 0:
             self.bodypartcount += 1
@@ -97,22 +98,22 @@ class Play_screen(Frame):
 
     def remove_body_part(self):
         if self.bodypartcount == 1:
-            Drawing.head()
+            Drawing.head(self)
         if self.bodypartcount == 2:
-            Drawing.body()
+            Drawing.body(self)
         if self.bodypartcount == 3:
-            Drawing.arm1()
+            Drawing.arm1(self)
         if self.bodypartcount == 4:
-            Drawing.arm2()
+            Drawing.arm2(self)
         if self.bodypartcount == 5:
-            Drawing.leg1()
+            Drawing.leg1(self)
         if self.bodypartcount == 6:
-            Drawing.leg2()
+            Drawing.leg2(self)
         if self.bodypartcount == 7:
-            Drawing.eye1()
+            Drawing.eye1(self)
         if self.bodypartcount == 8:
-            Drawing.eye2()
+            Drawing.eye2(self)
         if self.bodypartcount == 9:
-            Drawing.mouth()
+            Drawing.mouth(self)
 
         # self.guess_label["text"] = self.let_str

@@ -19,6 +19,7 @@ class Drawing(Frame):
 
     def stand(self):
         self.t = turtle.Turtle()
+        self.t.pencolor("crimson")
         self.t.setpos(0, 0)
         self.t.speed(0)
         self.t.up()
@@ -54,6 +55,7 @@ class Drawing(Frame):
 
     def body(self):
         t = turtle.Turtle()
+        self.t.pencolor("peru")
         t.speed(0)
         t.up()
         t.fd(200)
@@ -62,6 +64,7 @@ class Drawing(Frame):
 
     def arm1(self):
         t = turtle.Turtle()
+        self.t.pencolor("peru")
         t.speed(0)
         t.fd(100)
         t.rt(45)
@@ -75,6 +78,7 @@ class Drawing(Frame):
 
     def arm2(self):
         t = turtle.Turtle()
+        self.t.pencolor("peru")
         t.speed(0)
         t.fd(100)
         t.up()
@@ -87,6 +91,7 @@ class Drawing(Frame):
 
     def leg1(self):
         t = turtle.Turtle()
+        self.t.pencolor("peru")
         t.speed(0)
         t.fd(100)
         t.up()
@@ -97,6 +102,7 @@ class Drawing(Frame):
 
     def leg2(self):
         t = turtle.Turtle()
+        self.t.pencolor("peru")
         t.speed(0)
         t.fd(100)
         t.up()
@@ -111,6 +117,7 @@ class Drawing(Frame):
 
     def eye1(self):
         t = turtle.Turtle()
+        self.t.pencolor("peru")
         t.speed(0)
         t.circle(5)
         t.up()
@@ -122,6 +129,7 @@ class Drawing(Frame):
 
     def eye2(self):
         t = turtle.Turtle()
+        self.t.pencolor("peru")
         t.speed(0)
         t.circle(5)
         t.up()
@@ -131,6 +139,7 @@ class Drawing(Frame):
 
     def mouth(self):
         t = turtle.Turtle()
+        self.t.pencolor("peru")
         t.speed(0)
         t.circle(15, 180)
         t.up()
