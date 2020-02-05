@@ -28,8 +28,7 @@ class Play_screen(Frame):
             else:
                 self.let_str += "_ "
 
-
-        Drawing.stand(self)
+        Drawing.stand()
 
         alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
                     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -47,8 +46,8 @@ class Play_screen(Frame):
         for letter in alphabet:
             if column <= 26:
                 self.letter_button_dict[letter] = Button(self, text=letter, fg="Medium Sea Green", bg="Gainsboro",
-                                     command=self.create_letter_click_command(letter)
-                                     )
+                                                         command=self.create_letter_click_command(letter)
+                                                         )
                 self.letter_button_dict[letter].grid(row=20, column=column, sticky=N)
 
                 Label(self, text=""
@@ -94,28 +93,26 @@ class Play_screen(Frame):
 
         Label(self,
               text=self.let_str, font="Courier 20 bold", fg="Sea Green").grid(row=1, column=1, columnspan=1000,
-              sticky=N)
+                                                                              sticky=N)
 
     def remove_body_part(self):
         if self.bodypartcount == 1:
-            pass
+            Drawing.head()
         if self.bodypartcount == 2:
-            pass
+            Drawing.body()
         if self.bodypartcount == 3:
-            pass
+            Drawing.arm1()
         if self.bodypartcount == 4:
-            pass
+            Drawing.arm2()
         if self.bodypartcount == 5:
-            pass
+            Drawing.leg1()
         if self.bodypartcount == 6:
-            pass
+            Drawing.leg2()
         if self.bodypartcount == 7:
-            pass
+            Drawing.eye1()
         if self.bodypartcount == 8:
-            pass
+            Drawing.eye2()
         if self.bodypartcount == 9:
-            pass
+            Drawing.mouth()
 
-
-
-        #self.guess_label["text"] = self.let_str
+        # self.guess_label["text"] = self.let_str

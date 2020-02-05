@@ -47,6 +47,7 @@ class Drawing(Frame):
     def head(self):
         t = turtle.Turtle()
         t.speed(0)
+        t.pencolor("peru")
         t.up()
         t.circle(50)
         t.rt(90)
@@ -134,5 +135,3 @@ class Drawing(Frame):
         t.circle(15, 180)
         t.up()
         t.fd(100)
-
-
