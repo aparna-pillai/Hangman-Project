@@ -8,7 +8,7 @@ class Drawing(Frame):
         super(Drawing, self).__init__(master)
         self.grid()
         self.stand()
-        #self.head()
+        self.head()
         #self.body()
         #self.arm1()
         #self.arm2()
