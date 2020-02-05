@@ -28,7 +28,7 @@ class Play_screen(Frame):
             else:
                 self.let_str += "_ "
 
-        Drawing.stand()
+        Drawing.stand(self)
 
         alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
                     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
