@@ -69,32 +69,20 @@ class Play_screen(Frame):
     def create_letter_click_command(self, l):
         return lambda: self.letter_click(l)
 
-    def letter_click(self, letter):
-        self.tries = 0
+    def letter_click(self,l):
+        self.tries=0
 
-        for item in self.guess_list:
-            if letter != item:
-                my_list = []
-                for char in self.let_str:
-                    my_list.append(char)
-                    for thing in my_list:
-                        if thing != "_":
-                            self.let_str += thing
-                        elif thing == "_":
-                            self.let_str += "_ "
+        for i in range(len(self.guess_list)):
+            if self.guess_list[i]==l:
+                self.guess_list[i]=="a"
+                print(self.guess_list)
+                print(self.let_str)
 
-            else:
-                self.let_str += letter
-                self.tries += 1
+
+
+        print(l)
         print(self.guess_list)
 
-        if self.tries == 0:
-            self.bodypartcount += 1
-            (self.letter_button_dict[letter])["state"] = DISABLED
-
-        Label(self,
-              text=self.let_str, font="Courier 20 bold", fg="Sea Green").grid(row=1, column=1, columnspan=1000,
-                                                                              sticky=N)
 
     def remove_body_part(self):
         if self.bodypartcount == 1:
