@@ -1,7 +1,6 @@
 import turtle
 from tkinter import *
 
-
 class Drawing(Frame):
     def __init__(self, master):
         super(Drawing, self).__init__(master)
@@ -133,6 +132,3 @@ class Drawing(Frame):
         self.t.up()
         self.t.hideturtle()
 
-
-root = Tk()
-Drawing(root)
