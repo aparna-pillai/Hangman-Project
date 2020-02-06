@@ -19,7 +19,7 @@ class Drawing(Frame):
 
     def stand(self):
         self.t = turtle.Turtle()
-        self.t.speed(0)
+        self.t.speed(5)
         self.t.setpos(0, 0)
         self.t.up()
         self.t.lt(180)
@@ -46,16 +46,12 @@ class Drawing(Frame):
         self.stand_end = self.t.pos()
 
     def head(self):
-        self.t = turtle.Turtle()
-        self.t.speed(0)
         self.t.setpos(self.stand_end)
         self.t.circle(50)
         self.t.rt(90)
         self.head_end = self.t.pos()
 
     def body(self):
-        self.t = turtle.Turtle()
-        self.t.speed(0)
         self.t.setpos(self.head_end)
         self.t.fd(200)
         self.t.rt(180)
@@ -63,8 +59,6 @@ class Drawing(Frame):
         self.body_end = self.t.pos()
 
     def arm1(self):
-        self.t = turtle.Turtle()
-        self.t.speed(0)
         self.t.setpos(self.body_end)
         self.t.fd(100)
         self.t.rt(45)
@@ -78,8 +72,6 @@ class Drawing(Frame):
         self.arm1_end = self.t.pos()
 
     def arm2(self):
-        self.t = turtle.Turtle()
-        self.t.speed(0)
         self.t.setpos(self.arm1_end)
         self.t.fd(100)
         self.t.up()
@@ -92,8 +84,6 @@ class Drawing(Frame):
         self.arm2_end = self.t.pos()
 
     def leg1(self):
-        self.t = turtle.Turtle()
-        self.t.speed(0)
         self.t.setpos(self.arm2_end)
         self.t.fd(100)
         self.t.up()
@@ -104,8 +94,6 @@ class Drawing(Frame):
         self.leg1_end = self.t.pos()
 
     def leg2(self):
-        self.t = turtle.Turtle()
-        self.t.speed(0)
         self.t.setpos(self.leg1_end)
         self.t.fd(100)
         self.t.up()
@@ -120,8 +108,6 @@ class Drawing(Frame):
         self.leg2_end = self.t.pos()
 
     def eye1(self):
-        self.t = turtle.Turtle()
-        self.t.speed(0)
         self.t.setpos(self.leg2_end)
         self.t.circle(5)
         self.t.up()
@@ -133,8 +119,6 @@ class Drawing(Frame):
         self.eye1_end = self.t.pos()
 
     def eye2(self):
-        self.t = turtle.Turtle()
-        self.t.speed(0)
         self.t.setpos(self.eye1_end)
         self.t.circle(5)
         self.t.up()
@@ -144,10 +128,11 @@ class Drawing(Frame):
         self.eye2_end = self.t.pos()
 
     def mouth(self):
-        self.t = turtle.Turtle()
-        self.t.speed(0)
         self.t.setpos(self.eye2_end)
         self.t.circle(15, 180)
         self.t.up()
         self.t.hideturtle()
 
+
+root = Tk()
+Drawing(root)
