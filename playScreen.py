@@ -1,7 +1,5 @@
 from tkinter import *
 from turtleHangman import Drawing
-import turtle
-from tkinter import *
 
 
 class Play_screen(Frame):
@@ -73,6 +71,8 @@ class Play_screen(Frame):
     def letter_click(self,letter):
         self.bodypartcount = 0
 
+        print(self.guess_list)
+        print(self.let_str)
 
         for num in range (len(self.guess_list)):
             if letter == self.guess_list[num]:
@@ -83,35 +83,31 @@ class Play_screen(Frame):
                                          ).grid(row=1, column=1, columnspan=1000, sticky=N)
             elif self.bodypartcount <= 9:
                 self.bodypartcount += 1
-                self.remove_body_part()
 
 
-    def remove_body_part(self):
-        if self.bodypartcount == 1:
-            self.t = turtle.Turtle()
-            self.t.speed(0)
-            self.t.circle(50)
-            self.t.rt(90)
 
-        elif self.bodypartcount == 2:
-            self.t.fd(200)
 
-            self.t.rt(180)
-            self.t.up()
 
-        # elif self.bodypartcount == 3:
-        #     Drawing.arm1(self)
-        # elif self.bodypartcount == 4:
-        #     Drawing.arm2(self)
-        # elif self.bodypartcount == 5:
-        #     Drawing.leg1(self)
-        # elif self.bodypartcount == 6:
-        #     Drawing.leg2(self)
-        # elif self.bodypartcount == 7:
-        #     Drawing.eye1(self)
-        # elif self.bodypartcount == 8:
-        #     Drawing.eye2(self)
-        # elif self.bodypartcount == 9:
-        #     Drawing.mouth(self)
-        #
-        #
+
+
+    # def remove_body_part(self):
+    #     if self.bodypartcount == 1:
+    #         Drawing.head(self)
+    #     if self.bodypartcount == 2:
+    #         Drawing.body(self)
+    #     if self.bodypartcount == 3:
+    #         Drawing.arm1(self)
+    #     if self.bodypartcount == 4:
+    #         Drawing.arm2(self)
+    #     if self.bodypartcount == 5:
+    #         Drawing.leg1(self)
+    #     if self.bodypartcount == 6:
+    #         Drawing.leg2(self)
+    #     if self.bodypartcount == 7:
+    #         Drawing.eye1(self)
+    #     if self.bodypartcount == 8:
+    #         Drawing.eye2(self)
+    #     if self.bodypartcount == 9:
+    #         Drawing.mouth(self)
+    #
+
