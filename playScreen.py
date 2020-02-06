@@ -7,13 +7,14 @@ class Play_screen(Frame):
     def __init__(self, master, choice):
         """Initialize Frame."""
         self.choice = str(choice)
+        print(self.choice)
         super(Play_screen, self).__init__(master)
         master.title("Play Screen!")
         self.grid()
         self.create_widgets()
 
     def create_widgets(self):
-        self.let_str = ""
+        self.let_str = []
         self.bodypartcount = 0
         self.guess_list = []
 
@@ -22,11 +23,8 @@ class Play_screen(Frame):
                 self.guess_list.append(letter)
 
         for item in self.guess_list:
-            if item == "_":
-                self.let_str += " "
+                self.let_str.append("_")
 
-            else:
-                self.let_str += "_ "
 
         Drawing.stand(self)
 
@@ -42,6 +40,7 @@ class Play_screen(Frame):
         Label(self, text="").grid(row=2, column=1, sticky=N)
 
         self.letter_button_dict = {}
+        self.let_str_list = []
 
         for letter in alphabet:
             if column <= 26:
@@ -69,19 +68,22 @@ class Play_screen(Frame):
     def create_letter_click_command(self, l):
         return lambda: self.letter_click(l)
 
-    def letter_click(self,l):
-        self.tries=0
+    def letter_click(self,letter):
+        self.bodypartcount = 0
 
-        for i in range(len(self.guess_list)):
-            if self.guess_list[i]==l:
-                self.guess_list[i]=="a"
-                print(self.guess_list)
-                print(self.let_str)
-
-
-
-        print(l)
         print(self.guess_list)
+        print(self.let_str)
+
+        for num in range (len(self.guess_list)):
+            if letter == self.guess_list[num]:
+                self.let_str[num] = self.guess_list[num]
+                self.guess_label = Label(self,
+                                         text=self.let_str, font="Courier 20 bold",
+                                         fg="Sea Green"
+                                         ).grid(row=1, column=1, columnspan=1000, sticky=N)
+            elif self.bodypartcount <= 9:
+                self.bodypartcount += 1
+                self.remove_body_part()
 
 
     def remove_body_part(self):
@@ -104,4 +106,4 @@ class Play_screen(Frame):
         if self.bodypartcount == 9:
             Drawing.mouth(self)
 
-        # self.guess_label["text"] = self.let_str
+
