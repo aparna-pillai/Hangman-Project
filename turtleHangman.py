@@ -1,5 +1,6 @@
 import turtle
 from tkinter import *
+win = turtle.Screen()
 
 
 class Drawing(Frame):
@@ -21,6 +22,8 @@ class Drawing(Frame):
         self.t = turtle.Turtle()
         self.t.speed(5)
         self.t.setpos(0, 0)
+        self.t.pencolor("firebrick")
+        self.t.pensize(7)
         self.t.up()
         self.t.lt(180)
         self.t.fd(180)
@@ -47,12 +50,18 @@ class Drawing(Frame):
 
     def head(self):
         self.t.setpos(self.stand_end)
+        self.t.pencolor("peru")
+        self.t.fillcolor("peru")
+        self.t.begin_fill()
         self.t.circle(50)
+        self.t.end_fill()
         self.t.rt(90)
         self.head_end = self.t.pos()
 
     def body(self):
+        self.t.pensize(10)
         self.t.setpos(self.head_end)
+        self.t.pencolor("mediumblue")
         self.t.fd(200)
         self.t.rt(180)
         self.t.up()
@@ -60,6 +69,7 @@ class Drawing(Frame):
 
     def arm1(self):
         self.t.setpos(self.body_end)
+        self.t.pencolor("blue")
         self.t.fd(100)
         self.t.rt(45)
         self.t.down()
@@ -73,6 +83,7 @@ class Drawing(Frame):
 
     def arm2(self):
         self.t.setpos(self.arm1_end)
+        self.t.pencolor("blue")
         self.t.fd(100)
         self.t.up()
         self.t.rt(180)
@@ -85,6 +96,7 @@ class Drawing(Frame):
 
     def leg1(self):
         self.t.setpos(self.arm2_end)
+        self.t.pencolor("navy")
         self.t.fd(100)
         self.t.up()
         self.t.rt(180)
@@ -95,6 +107,7 @@ class Drawing(Frame):
 
     def leg2(self):
         self.t.setpos(self.leg1_end)
+        self.t.pencolor("navy")
         self.t.fd(100)
         self.t.up()
         self.t.rt(180)
@@ -108,8 +121,13 @@ class Drawing(Frame):
         self.leg2_end = self.t.pos()
 
     def eye1(self):
+        self.t.pensize(1)
+        self.t.pencolor("black")
+        self.t.fillcolor("black")
         self.t.setpos(self.leg2_end)
+        self.t.begin_fill()
         self.t.circle(5)
+        self.t.end_fill()
         self.t.up()
         self.t.rt(180)
         self.t.fd(30)
@@ -120,7 +138,9 @@ class Drawing(Frame):
 
     def eye2(self):
         self.t.setpos(self.eye1_end)
+        self.t.begin_fill()
         self.t.circle(5)
+        self.t.end_fill()
         self.t.up()
         self.t.fd(30)
         self.t.rt(180)
@@ -129,9 +149,12 @@ class Drawing(Frame):
 
     def mouth(self):
         self.t.setpos(self.eye2_end)
+        self.t.pencolor("sienna")
+        self.t.pensize(5)
         self.t.circle(15, 180)
         self.t.up()
         self.t.hideturtle()
+        win.exitonclick()
 
 
 root = Tk()
