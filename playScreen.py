@@ -78,6 +78,7 @@ class Play_screen(Frame):
         self.bodypartcount=0
         print(self.bodypartcount)
         is_letter_in_word = False
+        while is_letter_in_word
         for num in range (len(self.guess_list)):
             if letter == self.guess_list[num]:
                 self.let_str[num] = self.guess_list[num]
