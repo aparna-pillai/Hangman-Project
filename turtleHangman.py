@@ -2,11 +2,12 @@ import turtle
 from tkinter import *
 win = turtle.Screen()
 
+
 class Drawing(Frame):
     def __init__(self, master):
         super(Drawing, self).__init__(master)
         self.grid()
-        self.stand()
+        '''self.stand()
         self.head()
         self.body()
         self.arm1()
@@ -15,11 +16,11 @@ class Drawing(Frame):
         self.leg2()
         self.eye1()
         self.eye2()
-        self.mouth()
+        self.mouth()'''
 
     def stand(self):
         self.t = turtle.Turtle()
-        self.t.speed(5)
+        self.t.speed(0)
         self.t.setpos(0, 0)
         self.t.pencolor("firebrick")
         self.t.pensize(7)

@@ -75,54 +75,38 @@ class Play_screen(Frame):
         return lambda: self.letter_click(l)
 
     def letter_click(self,letter):
-        self.bodypartcount=0
-        print(self.bodypartcount)
-        is_letter_in_word = False
+        self.bodypartcount = 0
+
+        print(self.guess_list)
+        print(self.let_str)
+
         for num in range (len(self.guess_list)):
             if letter == self.guess_list[num]:
                 self.let_str[num] = self.guess_list[num]
                 self.guess_label['text']=self.let_str
-                is_letter_in_word = True
 
-        if is_letter_in_word==False:
-            self.bodypartcount+=1
+            elif self.bodypartcount <= 9:
+                 self.bodypartcount += 1
+                 self.remove_body_part()
 
-
-        print(self.bodypartcount)
-        print(self.let_str)
-        print(self.guess_list)
-
-
-        #     else:
-        #         self.variable+=1
-        #
-        # if self.variable == len(self.guess_list) and self.bodypartcount<=9:
-        #     self.bodypartcount += 1
-        #     print(self.bodypartcount)
-        #     self.remove_body_part()
-        #     len(self.g)
-
-
-
-    # def remove_body_part(self):
-    #     for i in range (0,10,1):
-    #         if i == 1:
-    #             Drawing.head(self)
-    #         elif i==2:
-    #             Drawing.body(self)
-    # #     if self.bodypartcount == 3:
-    # #         Drawing.arm1(self)
-    # #     if self.bodypartcount == 4:
-    # #         Drawing.arm2(self)
-    # #     if self.bodypartcount == 5:
-    # #         Drawing.leg1(self)
-    # #     if self.bodypartcount == 6:
-    # #         Drawing.leg2(self)
-    # #     if self.bodypartcount == 7:
-    # #         Drawing.eye1(self)
-    # #     if self.bodypartcount == 8:
-    # #         Drawing.eye2(self)
-    # #     if self.bodypartcount == 9:
-    # #         Drawing.mouth(self)
+    def remove_body_part(self):
+        if self.bodypartcount == 1:
+            Drawing.head(self)
+        # if self.bodypartcount == 2:
+        #      Drawing.body(self)
+        # if self.bodypartcount == 3:
+        #     Drawing.arm1(self)
+        # if self.bodypartcount == 4:
+        #     Drawing.arm2(self)
+        # if self.bodypartcount == 5:
+        #     Drawing.leg1(self)
+        # if self.bodypartcount == 6:
+        #     Drawing.leg2(self)
+        # if self.bodypartcount == 7:
+        #     Drawing.eye1(self)
+        # if self.bodypartcount == 8:
+        #     Drawing.eye2(self)
+        # if self.bodypartcount == 9:
+        #     Drawing.mouth(self)
 
 
