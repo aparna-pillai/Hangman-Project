@@ -77,16 +77,21 @@ class Play_screen(Frame):
     def letter_click(self,letter):
         self.bodypartcount=0
         print(self.bodypartcount)
-        is_letter_in_word = False
-        while is_letter_in_word
-        for num in range (len(self.guess_list)):
-            if letter == self.guess_list[num]:
-                self.let_str[num] = self.guess_list[num]
-                self.guess_label['text']=self.let_str
-                is_letter_in_word = True
+        self.is_letter_in_word = False
 
-        if is_letter_in_word==False:
+        def display_text(self):
+            for num in range (len(self.guess_list)):
+                if letter == self.guess_list[num]:
+                    self.let_str[num] = self.guess_list[num]
+                    self.guess_label['text']=self.let_str
+                    is_letter_in_word = True
+                    print(is_letter_in_word)
+
+        if self.is_letter_in_word==False:
             self.bodypartcount+=1
+            print(self.is_letter_in_word)
+            display_text(self)
+
 
 
         print(self.bodypartcount)
