@@ -18,3 +18,17 @@ woodpecker
 swan
 peacock
 dove
+hippopotamus
+llama
+iguana
+rhinoceros
+cheetah
+polar_bear
+parrot
+brown_bear
+panda
+chameleon
+arctic_fox
+antelope
+koala
+giraffe
