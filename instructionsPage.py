@@ -16,9 +16,11 @@ class Instruction_page(Frame):
        self.story_txt.grid(row=0, column=0, columnspan=4)
 
        instructions = ("Are you ready to play one of the best games in the world?\n\n"
-                       "With this version of Hangman, you get a chance to play the classic game, while watching your hangman being drawn line by line!\n\n"
-                       "Can you save your hangman?\n\nFirst, select the single player button.\n\nThen, choose from one of the four categories to get words of that type.\n\n" 
-                       "Finally, click the letter buttons to spell out the word, and win before it's too late! Keep in mind that you only have 10 tries to get it right.\n\n"
+                       "With this version of Hangman, you get a chance to play the classic game, while watching\nyour hangman being drawn line by line!\n\n"
+                       "Can you save your hangman?\n\nFirst, select the single player button.\n\nThen, choose from one of the four categories to get words"
+                       "of that type.\n\n" 
+                       "Finally, click the letter buttons to spell out the word, and win before it's too late!\nKeep in mind that you only have 10 tries to"
+                       "get it right.\n\n"
                        "Good Luck and Have Fun!!!"
                        )
 

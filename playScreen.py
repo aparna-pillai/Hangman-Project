@@ -4,10 +4,10 @@ from turtleHangman import Drawing
 
 class Play_screen(Frame):
 
-    def __init__(self, master, choice):
+    def __init__(self, master, choice, return_home):
         """Initialize Frame."""
         self.choice = str(choice)
-        print(self.choice)
+        self.return_home = return_home
         super(Play_screen, self).__init__(master)
         master.title("Play Screen!")
         self.grid()
@@ -28,8 +28,6 @@ class Play_screen(Frame):
             else:
                 self.let_str.append(" ")
 
-        print(self.let_str)
-        print(self.guess_list)
 
         Drawing.stand(self)
 
@@ -72,63 +70,51 @@ class Play_screen(Frame):
               ).grid(row=21, sticky=N)
 
     def create_letter_click_command(self, l):
+        self.bodypartcount = 0
         return lambda: self.letter_click(l)
 
     def letter_click(self,letter):
-        self.bodypartcount=0
-        print(self.bodypartcount)
+        count_var = 0
         self.is_letter_in_word = False
 
-        def display_text(self):
-            for num in range (len(self.guess_list)):
-                if letter == self.guess_list[num]:
-                    self.let_str[num] = self.guess_list[num]
-                    self.guess_label['text']=self.let_str
-                    is_letter_in_word = True
-                    print(is_letter_in_word)
+        for num in range(len(self.guess_list)):
+            if letter == self.guess_list[num]:
+                self.let_str[num] = self.guess_list[num]
+                self.guess_label['text'] = self.let_str
+                # is_letter_in_word = True
+            else:
+                count_var += 1
 
-        if self.is_letter_in_word==False:
-            self.bodypartcount+=1
-            print(self.is_letter_in_word)
-            display_text(self)
-
+        if count_var == len(self.guess_list):
+            self.bodypartcount += 1
+            self.remove_body_part(letter)
 
 
-        print(self.bodypartcount)
-        print(self.let_str)
-        print(self.guess_list)
+    def remove_body_part(self,letter):
+        if self.bodypartcount == 1:
+            Drawing.head(self)
+        elif self.bodypartcount == 2:
+            Drawing.body(self)
+        elif self.bodypartcount == 3:
+            Drawing.arm1(self)
+        elif self.bodypartcount == 4:
+            Drawing.arm2(self)
+        elif self.bodypartcount == 5:
+            Drawing.leg1(self)
+        elif self.bodypartcount == 6:
+            Drawing.leg2(self)
+        elif self.bodypartcount == 7:
+            Drawing.eye1(self)
+        elif self.bodypartcount == 8:
+            Drawing.eye2(self)
+        if self.bodypartcount == 9:
+            Drawing.mouth(self)
+            self.back_to_home()
+        #self.letter_button_dict(letter)["state"] = DISABLED
 
 
-        #     else:
-        #         self.variable+=1
-        #
-        # if self.variable == len(self.guess_list) and self.bodypartcount<=9:
-        #     self.bodypartcount += 1
-        #     print(self.bodypartcount)
-        #     self.remove_body_part()
-        #     len(self.g)
 
-
-
-    # def remove_body_part(self):
-    #     for i in range (0,10,1):
-    #         if i == 1:
-    #             Drawing.head(self)
-    #         elif i==2:
-    #             Drawing.body(self)
-    # #     if self.bodypartcount == 3:
-    # #         Drawing.arm1(self)
-    # #     if self.bodypartcount == 4:
-    # #         Drawing.arm2(self)
-    # #     if self.bodypartcount == 5:
-    # #         Drawing.leg1(self)
-    # #     if self.bodypartcount == 6:
-    # #         Drawing.leg2(self)
-    # #     if self.bodypartcount == 7:
-    # #         Drawing.eye1(self)
-    # #     if self.bodypartcount == 8:
-    # #         Drawing.eye2(self)
-    # #     if self.bodypartcount == 9:
-    # #         Drawing.mouth(self)
+    def back_to_home(self):
+        self.return_home(self.choice)
 
 
