@@ -77,8 +77,9 @@ class Play_screen(Frame):
 
     def letter_click(self,letter):
         count_var = 0
-        self.is_letter_in_word = False
-
+        if self.bodypartcount == 9:
+            self.back_to_home()
+        self.letter_button_dict[letter]["state"] = DISABLED
         for num in range(len(self.guess_list)):
             if letter == self.guess_list[num]:
                 self.let_str[num] = self.guess_list[num]
@@ -91,7 +92,8 @@ class Play_screen(Frame):
             self.bodypartcount += 1
             self.remove_body_part(letter)
 
-        self.letter_button_dict[letter]["state"] = DISABLED
+
+
 
 
     def remove_body_part(self,letter):
@@ -113,7 +115,7 @@ class Play_screen(Frame):
             Drawing.eye2(self)
         if self.bodypartcount == 9:
             Drawing.mouth(self)
-            self.back_to_home()
+
 
 
 

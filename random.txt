@@ -146,4 +146,20 @@ hairtie
 boots
 scarfs
 hearing_aids
+car_keys
+coupons
+coffee_table
+legos
+xbox
+sunglasses
+television
+couch
+kids_baking_championships
+netflix
+guitar
+amazon_prime
+monopoly
+scrabble
+sun
+
 

@@ -32,3 +32,5 @@ arctic_fox
 antelope
 koala
 giraffe
+gorilla
+robin
