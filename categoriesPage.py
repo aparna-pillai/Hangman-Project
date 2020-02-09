@@ -22,7 +22,7 @@ class Categories_page(Frame):
              ).grid(row=2, column=1, sticky=N)
        Button(self, text="Animals", font = "Courier 20", fg="Dodger Blue",
               command=self.animal_choice
-              ).grid(row=3, column=1, sticky=N)
+              ).grid(row=9, column=1, sticky=N)
        Label(self, text="",
              ).grid(row=4, column=1, sticky=N)
        Button(self, text="Movies", font = "Courier 20", fg="Dodger Blue",
@@ -32,9 +32,17 @@ class Categories_page(Frame):
              ).grid(row=6, column=1, sticky=N)
        Button(self, text="Famous People", font = "Courier 20", fg="Dodger Blue",
               command=self.famous_people
-              ).grid(row=7, column=1, sticky=N)
+              ).grid(row=11, column=1, sticky=N)
        Label(self, text="",
              ).grid(row=8, column=1, sticky=N)
+       Button(self, text="Books", font="Courier 20", fg="Dodger Blue",
+              command=self.books_choice
+              ).grid(row=3, column=1, sticky=N)
+       Label(self, text="",
+             ).grid(row=10, column=1, sticky=N)
+       Button(self, text="Random", font="Courier 20", fg="Dodger Blue",
+              command=self.random_choice
+              ).grid(row=7, column=1, sticky=N)
 
 
    def food_choice(self):
@@ -74,15 +82,23 @@ class Categories_page(Frame):
        num = random.randint(0, len(choice_list) - 1)
        choice = choice_list[num]
        self.call_on_next(choice)
-   def choose(self):
-       self.choose_box = Text(self, width = 20, height=4, wrap=WORD)
-       Label(self, text="Enter your word or phrase here!\nSeparate your words with an underscore.\nPlease don't use any symbols in your message.\n"
-                        "Ex: Harry_Potter\nWhen you're done, hit the 'Done!' Button!"
-             ).grid(row=5, column=1, sticky=N)
-       self.choose_box.grid(row=6, column=0, columnspan=4)
-       Button(self, text="Done!",
-              command=self.done
-              ).grid(row=7, column=1, sticky=N)
-   def done(self):
-       choice = self.choose_box.get("0.0",END)
+
+   def books_choice(self):
+       text_file = open("books.txt", "r")
+       choice_list = []
+       for line in text_file:
+           line = line.strip("\n")
+           choice_list.append(line)
+       num = random.randint(0, len(choice_list) - 1)
+       choice = choice_list[num]
+       self.call_on_next(choice)
+
+   def random_choice(self):
+       text_file = open("random.txt", "r")
+       choice_list = []
+       for line in text_file:
+           line = line.strip("\n")
+           choice_list.append(line)
+       num = random.randint(0, len(choice_list) - 1)
+       choice = choice_list[num]
        self.call_on_next(choice)

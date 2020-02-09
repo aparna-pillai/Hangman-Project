@@ -3,6 +3,7 @@ from homePage import Home_page
 from instructionsPage import Instruction_page
 from categoriesPage import Categories_page
 from playScreen import Play_screen
+from loseScreen import Lose_screen
 
 
 class Hangman_Manager(object):
@@ -16,10 +17,10 @@ class Hangman_Manager(object):
 
     def call_next(self):
         self.current_screen.destroy()
-        self.elmo = Instruction_page(self.root, self.return_to_home)
+        self.donald = Instruction_page(self.root, self.return_to_home)
 
     def return_to_home(self):
-        self.elmo.destroy()
+        self.donald.destroy()
         self.current_screen = Home_page(self.root, self.call_next, self.other_call_next)
 
     def other_call_next(self):
@@ -28,8 +29,10 @@ class Hangman_Manager(object):
 
     def call_for_main_game(self, choice):
         self.mickey.destroy()
-        self.choice = choice
-        self.goofy = Play_screen(self.root, self.choice)
+        self.goofy = Play_screen(self.root, choice, self.lose_screen)
+
+    def lose_screen(self, pick):
+        print(pick)
 
 
 def main():
