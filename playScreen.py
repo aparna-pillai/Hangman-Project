@@ -58,9 +58,11 @@ class Play_screen(Frame):
 
                 column += 2
             else:
-                self.letter = Button(self, text=letter, fg="Medium Sea Green", bg="Gainsboro",
+                self.letter_button_dict[letter] = Button(self, text=letter, fg="Medium Sea Green", bg="Gainsboro",
                                      command=self.create_letter_click_command(letter)
-                                     ).grid(row=22, column=column2, sticky=N)
+                                     )
+
+                self.letter_button_dict[letter].grid(row=22, column=column2, sticky=N)
 
                 Label(self, text=""
                       ).grid(row=22, column=column2 + 1, sticky=N)
@@ -89,6 +91,8 @@ class Play_screen(Frame):
             self.bodypartcount += 1
             self.remove_body_part(letter)
 
+        self.letter_button_dict[letter]["state"] = DISABLED
+
 
     def remove_body_part(self,letter):
         if self.bodypartcount == 1:
@@ -110,7 +114,7 @@ class Play_screen(Frame):
         if self.bodypartcount == 9:
             Drawing.mouth(self)
             self.back_to_home()
-        #self.letter_button_dict(letter)["state"] = DISABLED
+
 
 
 
