@@ -2,9 +2,9 @@ from tkinter import *
 
 
 class Win_screen(Frame):
-   def __init__(self, master, play_again, game_exit):
+   def __init__(self, master, play_again_for_win, game_exit):
        """Initialize Frame."""
-       self.play_again = play_again
+       self.play_again_for_win = play_again_for_win
        self.exit = game_exit
        super(Win_screen, self).__init__(master, background ="DodgerBlue4")
        master.title("What a Winner!")
@@ -29,12 +29,12 @@ class Win_screen(Frame):
               font="Courier 12",
               fg="DodgerBlue4",
               bg = "Dark Turquoise",
-              command=self.leave()
+              command=self.leave
               ).grid(row=5, column=1, sticky=W)
 
 
    def back_to_home(self):
-       self.play_again()
+       self.play_again_for_win()
 
    def leave(self):
        self.exit()

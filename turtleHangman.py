@@ -7,7 +7,7 @@ class Drawing(Frame):
     def __init__(self, master):
         super(Drawing, self).__init__(master)
         self.grid()
-        '''self.stand()
+        self.stand()
         self.head()
         self.body()
         self.arm1()
@@ -16,14 +16,14 @@ class Drawing(Frame):
         self.leg2()
         self.eye1()
         self.eye2()
-        self.mouth()'''
+        self.mouth()
 
     def stand(self):
         self.t = turtle.Turtle()
         self.t.speed(0)
         self.t.setpos(0, 0)
         self.t.pencolor("firebrick")
-        self.t.pensize(7)
+        self.t.pensize(5)
         self.t.up()
         self.t.lt(180)
         self.t.fd(180)
@@ -61,7 +61,7 @@ class Drawing(Frame):
     def body(self):
         self.t.pensize(10)
         self.t.setpos(self.head_end)
-        self.t.pencolor("mediumblue")
+        self.t.pencolor("pink")
         self.t.fd(200)
         self.t.rt(180)
         self.t.up()
@@ -69,7 +69,7 @@ class Drawing(Frame):
 
     def arm1(self):
         self.t.setpos(self.body_end)
-        self.t.pencolor("blue")
+        self.t.pencolor("pink")
         self.t.fd(100)
         self.t.rt(45)
         self.t.down()
@@ -83,7 +83,7 @@ class Drawing(Frame):
 
     def arm2(self):
         self.t.setpos(self.arm1_end)
-        self.t.pencolor("blue")
+        self.t.pencolor("pink")
         self.t.fd(100)
         self.t.up()
         self.t.rt(180)
@@ -96,7 +96,7 @@ class Drawing(Frame):
 
     def leg1(self):
         self.t.setpos(self.arm2_end)
-        self.t.pencolor("navy")
+        self.t.pencolor("pink")
         self.t.fd(100)
         self.t.up()
         self.t.rt(180)
@@ -107,7 +107,7 @@ class Drawing(Frame):
 
     def leg2(self):
         self.t.setpos(self.leg1_end)
-        self.t.pencolor("navy")
+        self.t.pencolor("pink")
         self.t.fd(100)
         self.t.up()
         self.t.rt(180)
@@ -150,11 +150,8 @@ class Drawing(Frame):
     def mouth(self):
         self.t.setpos(self.eye2_end)
         self.t.pencolor("sienna")
-        self.t.pensize(5)
+        self.t.pensize(3)
         self.t.circle(15, 180)
         self.t.up()
         self.t.hideturtle()
         self.t.reset()
-
-
-

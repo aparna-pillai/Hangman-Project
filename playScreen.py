@@ -1,7 +1,6 @@
 from tkinter import *
 from turtleHangman import Drawing
 
-
 class Play_screen(Frame):
 
     def __init__(self, master, choice, return_home, return_to_home):
@@ -124,11 +123,5 @@ class Play_screen(Frame):
     def back_to_home(self):
         if self.bodypartcount == 9:
             self.return_home(self.choice)
-
         else:
             self.return_to_home()
-
-
-
-
-
