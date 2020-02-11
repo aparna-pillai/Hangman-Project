@@ -154,5 +154,7 @@ class Drawing(Frame):
         self.t.circle(15, 180)
         self.t.up()
         self.t.hideturtle()
-        win.exitonclick()
+        self.t.reset()
+
+
 

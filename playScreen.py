@@ -4,10 +4,11 @@ from turtleHangman import Drawing
 
 class Play_screen(Frame):
 
-    def __init__(self, master, choice, return_home):
+    def __init__(self, master, choice, return_home, return_to_home):
         """Initialize Frame."""
         self.choice = str(choice)
         self.return_home = return_home
+        self.return_to_home = return_to_home
         super(Play_screen, self).__init__(master)
         master.title("Play Screen!")
         self.grid()
@@ -77,26 +78,29 @@ class Play_screen(Frame):
 
     def letter_click(self,letter):
         count_var = 0
-        if self.bodypartcount == 9:
-            self.back_to_home()
+        other = 0
         self.letter_button_dict[letter]["state"] = DISABLED
         for num in range(len(self.guess_list)):
             if letter == self.guess_list[num]:
                 self.let_str[num] = self.guess_list[num]
-                self.guess_label['text'] = self.let_str
+                self.guess_label['text'] =" ".join(self.let_str)
                 # is_letter_in_word = True
             else:
                 count_var += 1
 
         if count_var == len(self.guess_list):
             self.bodypartcount += 1
-            self.remove_body_part(letter)
+            self.remove_body_part()
+
+        for char in self.let_str:
+            if char != "_":
+                other += 1
+
+        if self.bodypartcount == 9 or other == len(self.let_str):
+            self.back_to_home()
 
 
-
-
-
-    def remove_body_part(self,letter):
+    def remove_body_part(self):
         if self.bodypartcount == 1:
             Drawing.head(self)
         elif self.bodypartcount == 2:
@@ -113,14 +117,18 @@ class Play_screen(Frame):
             Drawing.eye1(self)
         elif self.bodypartcount == 8:
             Drawing.eye2(self)
-        if self.bodypartcount == 9:
+        elif self.bodypartcount == 9:
             Drawing.mouth(self)
 
 
-
-
-
     def back_to_home(self):
-        self.return_home(self.choice)
+        if self.bodypartcount == 9:
+            self.return_home(self.choice)
+
+        else:
+            self.return_to_home()
+
+
+
 
 

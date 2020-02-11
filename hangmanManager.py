@@ -4,6 +4,7 @@ from instructionsPage import Instruction_page
 from categoriesPage import Categories_page
 from playScreen import Play_screen
 from loseScreen import Lose_screen
+from winScreen import Win_screen
 
 
 class Hangman_Manager(object):
@@ -29,10 +30,20 @@ class Hangman_Manager(object):
 
     def call_for_main_game(self, choice):
         self.mickey.destroy()
-        self.goofy = Play_screen(self.root, choice, self.lose_screen)
+        self.goofy = Play_screen(self.root, choice, self.lose_screen, self.win_screen)
 
     def lose_screen(self, pick):
-        print(pick)
+        self.goofy.destroy()
+        self.donald = Lose_screen(self.root, pick, self.play_again)
+
+    def win_screen(self):
+        self.goofy.destroy()
+        self.donald = Win_screen(self.root, self.play_again)
+
+    def play_again(self):
+        self.donald.destroy()
+        self.mickey = Categories_page(self.root, self.call_for_main_game)
+
 
 
 def main():
