@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 class Lose_screen(Frame):
    def __init__(self, master, choice, play_again_for_lose, game_exit):
        """Initialize Frame."""

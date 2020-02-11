@@ -63,6 +63,7 @@ class Categories_page(Frame):
        num = random.randint(0, len(choice_list) - 1)
        choice = choice_list[num]
        self.call_on_next(choice)
+
    def movie_choice(self):
        text_file = open("movies.txt", "r")
        choice_list = []

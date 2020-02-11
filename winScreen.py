@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 class Win_screen(Frame):
    def __init__(self, master, play_again_for_win, game_exit):
        """Initialize Frame."""
@@ -10,7 +9,6 @@ class Win_screen(Frame):
        master.title("What a Winner!")
        self.grid()
        self.create_widgets()
-
 
    def create_widgets(self):
        Label(self, text="Congratulations!",font="Courier 20 bold", fg="Dark Turquoise", bg = "DodgerBlue4"

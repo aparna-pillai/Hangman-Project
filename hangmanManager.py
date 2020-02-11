@@ -6,7 +6,6 @@ from playScreen import Play_screen
 from loseScreen import Lose_screen
 from winScreen import Win_screen
 
-
 class Hangman_Manager(object):
     def __init__(self):
         self.root = tkinter.Tk()
@@ -58,6 +57,5 @@ def main():
     hangman = Hangman_Manager()
     hangman.load_page()
     hangman.root.mainloop()
-
 
 main()

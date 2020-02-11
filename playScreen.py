@@ -2,7 +2,6 @@ from tkinter import *
 from turtleHangman import Drawing
 
 class Play_screen(Frame):
-
     def __init__(self, master, choice, return_home, return_to_home):
         """Initialize Frame."""
         self.choice = str(choice)
@@ -27,7 +26,6 @@ class Play_screen(Frame):
                 self.let_str.append("_")
             else:
                 self.let_str.append(" ")
-
 
         Drawing.stand(self)
 
@@ -98,7 +96,6 @@ class Play_screen(Frame):
         if self.bodypartcount == 9 or other == len(self.let_str):
             self.back_to_home()
 
-
     def remove_body_part(self):
         if self.bodypartcount == 1:
             Drawing.head(self)
@@ -118,7 +115,6 @@ class Play_screen(Frame):
             Drawing.eye2(self)
         elif self.bodypartcount == 9:
             Drawing.mouth(self)
-
 
     def back_to_home(self):
         if self.bodypartcount == 9:
