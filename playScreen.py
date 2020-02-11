@@ -77,13 +77,12 @@ class Play_screen(Frame):
 
     def letter_click(self,letter):
         count_var = 0
-        if self.bodypartcount == 9:
-            self.back_to_home()
+        other = 0
         self.letter_button_dict[letter]["state"] = DISABLED
         for num in range(len(self.guess_list)):
             if letter == self.guess_list[num]:
                 self.let_str[num] = self.guess_list[num]
-                self.guess_label['text'] = self.let_str
+                self.guess_label['text'] =" ".join(self.let_str)
                 # is_letter_in_word = True
             else:
                 count_var += 1
@@ -92,8 +91,12 @@ class Play_screen(Frame):
             self.bodypartcount += 1
             self.remove_body_part(letter)
 
+        for char in self.let_str:
+            if char != "_":
+                other += 1
 
-
+        if self.bodypartcount == 9:
+            self.back_to_home()
 
 
     def remove_body_part(self,letter):
@@ -119,8 +122,9 @@ class Play_screen(Frame):
 
 
 
-
     def back_to_home(self):
         self.return_home(self.choice)
+
+
 
 

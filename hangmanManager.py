@@ -32,7 +32,11 @@ class Hangman_Manager(object):
         self.goofy = Play_screen(self.root, choice, self.lose_screen)
 
     def lose_screen(self, pick):
-        print(pick)
+        self.goofy.destroy()
+        self.daisy = Lose_screen(self.root, self.done)
+
+    def done(self):
+        pass
 
 
 def main():

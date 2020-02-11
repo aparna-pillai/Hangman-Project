@@ -60,7 +60,3 @@ waffle
 scrambled_eggs
 chocolate_cake
 vanilla_ice_cream
-
-
-
-
