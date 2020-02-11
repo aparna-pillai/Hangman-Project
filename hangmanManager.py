@@ -34,15 +34,18 @@ class Hangman_Manager(object):
 
     def lose_screen(self, pick):
         self.goofy.destroy()
-        self.donald = Lose_screen(self.root, pick, self.play_again)
+        self.donald = Lose_screen(self.root, pick, self.play_again, self.exit_game)
 
     def win_screen(self):
         self.goofy.destroy()
-        self.donald = Win_screen(self.root, self.play_again)
+        self.donald = Win_screen(self.root, self.play_again, self.exit_game)
 
     def play_again(self):
         self.donald.destroy()
         self.mickey = Categories_page(self.root, self.call_for_main_game)
+
+    def exit_game(self):
+        self.donald.destroy()
 
 
 
