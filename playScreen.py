@@ -1,5 +1,6 @@
 from tkinter import *
-from turtleHangman import Drawing
+from turtleHangman import Drawing, win
+
 
 class Play_screen(Frame):
 
@@ -118,7 +119,6 @@ class Play_screen(Frame):
             Drawing.eye2(self)
         elif self.bodypartcount == 9:
             Drawing.mouth(self)
-
 
     def back_to_home(self):
         if self.bodypartcount == 9:
