@@ -20,7 +20,7 @@ class Instruction_page(Frame):
                        "Can you save your hangman?\n\nFirst, select the play button.\n\nThen, choose from one of the categories to get words of that type. Random gives you"
                        " all of the catagories, and more.\n\n" 
                        "Finally, click the letter buttons to spell out the word, and win before it's too late!\n"
-                       "Keep in mind that you only have 10 tries to get it right.\n\nAlso, even after the mouth of the hangman is drawn, you still have one more chance.\n\n"
+                       "Keep in mind that you only have 10 tries to get it right.\n\n"
                        "Good Luck and Have Fun!!!"
                        )
 
