@@ -1,6 +1,8 @@
 from tkinter import *
 
+
 class Home_page(Frame):
+
    def __init__(self, master, call_on_selected, call_on_other_selected):
        """Initialize Frame."""
        self.call_on_selected = call_on_selected

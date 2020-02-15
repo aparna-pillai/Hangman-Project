@@ -1,5 +1,6 @@
 from tkinter import *
-from turtleHangman import Drawing
+from turtleHangman import Drawing, win
+
 
 class Play_screen(Frame):
     def __init__(self, master, choice, return_home, return_to_home):

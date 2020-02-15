@@ -1,5 +1,6 @@
 from tkinter import *
 
+
 class Instruction_page(Frame):
    def __init__(self, master, return_home):
        """Initialize Frame."""
@@ -8,6 +9,7 @@ class Instruction_page(Frame):
        master.title("Instructions Page")
        self.grid()
        self.create_widgets()
+
 
    def create_widgets(self):
        self.story_txt = Text(self, font= "Courier 20", fg="Dark Cyan", width=100, height=18, wrap=WORD)

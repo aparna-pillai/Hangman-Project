@@ -44,15 +44,15 @@ class Categories_page(Frame):
        Label(self, text="",
              ).grid(row=12, column=2, sticky=N)
 
-   def food_choice(self):
-       text_file = open("food.txt","r")
-       choice_list = []
-       for line in text_file:
-           line = line.strip("\n")
-           choice_list.append(line)
-       num = random.randint(0,len(choice_list) - 1)
-       choice = choice_list[num]
-       self.call_on_next(choice)
+    def food_choice(self):
+        text_file = open("food.txt", "r")
+        choice_list = []
+        for line in text_file:
+            line = line.strip("\n")
+            choice_list.append(line)
+        num = random.randint(0, len(choice_list) - 1)
+        choice = choice_list[num]
+        self.call_on_next(choice)
 
    def animal_choice(self):
        text_file = open("animals.txt", "r")
@@ -63,7 +63,6 @@ class Categories_page(Frame):
        num = random.randint(0, len(choice_list) - 1)
        choice = choice_list[num]
        self.call_on_next(choice)
-
    def movie_choice(self):
        text_file = open("movies.txt", "r")
        choice_list = []
