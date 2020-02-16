@@ -97,8 +97,8 @@ class Play_screen(Frame):
                 other += 1
 
         if self.bodypartcount == 9 or other == len(self.let_str):
+            Drawing.reset(self)
             self.back_to_home()
-
 
     def remove_body_part(self):
         if self.bodypartcount == 1:

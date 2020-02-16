@@ -42,7 +42,7 @@ class Hangman_Manager(object):
 
     def play_again_for_win(self):
         self.donald.destroy()
-        self.mickey = Categories_page(self.root, self.categories)
+        self.mickey = Categories_page(self.root, self.play_screen)
 
     def play_again_for_lose(self):
         self.donald.destroy()
