@@ -1,5 +1,5 @@
 from tkinter import *
-from turtleHangman import Drawing, win
+from turtleHangman import Drawing
 
 class Play_screen(Frame):
 
@@ -8,7 +8,7 @@ class Play_screen(Frame):
         self.choice = str(choice)
         self.return_home = return_home
         self.return_to_home = return_to_home
-        super(Play_screen, self).__init__(master)
+        super(Play_screen, self).__init__(master, background = "honeydew")
         master.title("Play Screen!")
         self.grid()
         self.create_widgets()
@@ -37,43 +37,43 @@ class Play_screen(Frame):
         column = 1
         column2 = 1
         self.guess_label = Label(self,
-                                 text=" ".join(self.let_str), font="Courier 20 bold",
+                                 text=" ".join(self.let_str), bg = "honeydew",font="Courier 20 bold",
                                  fg="Sea Green"
                                  )
         self.guess_label.grid(row=1, column=1, columnspan=1000, sticky=N)
-        Label(self, text=" ").grid(row=2, column=1, sticky=N)
+        Label(self, text=" ", bg = "honeydew").grid(row=2, column=1, sticky=N)
 
         self.letter_button_dict = {}
         self.let_str_list = []
 
         for letter in alphabet:
             if column <= 26:
-                self.letter_button_dict[letter] = Button(self, text=letter, fg="Medium Sea Green", bg="Gainsboro",
+                self.letter_button_dict[letter] = Button(self, text=letter, fg="forest green", bg="Gainsboro",
                                                          command=self.create_letter_click_command(letter)
                                                          )
                 self.letter_button_dict[letter].grid(row=20, column=column, sticky=N)
 
-                Label(self, text=""
+                Label(self, text="", bg = "honeydew"
                       ).grid(row=20, column=column + 1, sticky=N)
 
                 column += 2
             else:
-                self.letter_button_dict[letter] = Button(self, text=letter, fg="Medium Sea Green", bg="Gainsboro",
+                self.letter_button_dict[letter] = Button(self, text=letter, fg="forest green", bg="Gainsboro",
                                      command=self.create_letter_click_command(letter)
                                      )
 
                 self.letter_button_dict[letter].grid(row=22, column=column2, sticky=N)
 
-                Label(self, text=""
+                Label(self, text="", bg = "honeydew"
                       ).grid(row=22, column=column2 + 1, sticky=N)
 
                 column2 += 2
-        Label(self, text=""
+        Label(self, text="", bg = "honeydew"
               ).grid(row=21, sticky=N)
-        Label(self, text=""
+        Label(self, text="", bg = "honeydew"
               ).grid(row=22, sticky=N)
-        Label(self, text=""
-              ).grid(row=23, sticky=N)
+        Label(self, text="", bg = "honeydew"
+              ).grid(row=23,sticky=N)
 
 
     def create_letter_click_command(self, l):

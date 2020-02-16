@@ -7,7 +7,7 @@ class Categories_page(Frame):
     def __init__(self, master, call_on_next):
         """Initialize Frame."""
         self.call_on_next = call_on_next
-        super(Categories_page, self).__init__(master)
+        super(Categories_page, self).__init__(master, background = "lavenderblush")
         self.grid()
         self.create_widgets()
         master.title("Categories")
@@ -15,35 +15,35 @@ class Categories_page(Frame):
     def create_widgets(self):
         Label(self, text="",
               ).grid(row=0, column=0, sticky=N)
-        Button(self, text="Animals", font="Courier 20", fg="Dodger Blue",
+        Button(self, text="Animals", font="Courier 20",fg="tomato",
                command=self.animal_choice
                ).grid(row=1, column=1, sticky=N)
         Label(self, text="",
               ).grid(row=2, column=0, sticky=N)
-        Button(self, text="Books", font="Courier 20", fg="Dodger Blue",
+        Button(self, text="Books", font="Courier 20", fg="tomato",
                command=self.books_choice
                ).grid(row=3, column=1, sticky=N)
-        Label(self, text="",
+        Label(self, text="", bg = "lavenderblush"
               ).grid(row=4, column=0, sticky=N)
-        Button(self, text="Famous People", font="Courier 20", fg="Dodger Blue",
+        Button(self, text="Famous People", font="Courier 20", fg="tomato",
                command=self.famous_people
                ).grid(row=5, column=1, sticky=N)
-        Label(self, text="",
+        Label(self, text="", bg = "lavenderblush"
               ).grid(row=6, column=0, sticky=N)
-        Button(self, text="Food", font="Courier 20", fg="Dodger Blue",
+        Button(self, text="Food", font="Courier 20", fg="tomato",
                command=self.food_choice
                ).grid(row=7, column=1, sticky=N)
-        Label(self, text="",
+        Label(self, text="", bg = "lavenderblush"
               ).grid(row=8, column=0, sticky=N)
-        Button(self, text="Movies", font="Courier 20", fg="Dodger Blue",
+        Button(self, text="Movies", font="Courier 20", fg="tomato",
                command=self.movie_choice
                ).grid(row=9, column=1, sticky=N)
-        Label(self, text="",
+        Label(self, text="", bg = "lavenderblush"
               ).grid(row=10, column=0, sticky=N)
-        Button(self, text="Random", font="Courier 20", fg="Dodger Blue",
+        Button(self, text="Random", font="Courier 20", fg="tomato",
                command=self.random_choice
                ).grid(row=11, column=1, sticky=N)
-        Label(self, text="",
+        Label(self, text="", bg = "lavenderblush"
               ).grid(row=12, column=2, sticky=N)
 
     def food_choice(self):

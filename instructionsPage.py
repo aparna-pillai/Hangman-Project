@@ -5,13 +5,13 @@ class Instruction_page(Frame):
     def __init__(self, master, return_home):
         """Initialize Frame."""
         self.return_home = return_home
-        super(Instruction_page, self).__init__(master)
+        super(Instruction_page, self).__init__(master, background = "moccasin")
         master.title("Instructions Page")
         self.grid()
         self.create_widgets()
 
     def create_widgets(self):
-        self.story_txt = Text(self, font="Courier 20", fg="Dark Cyan", width=100, height=18, wrap=WORD)
+        self.story_txt = Text(self, font="Courier 20", fg="darkorange", bg = "moccasin", width=100, height=18, wrap=WORD)
         self.story_txt.grid(row=0, column=0, columnspan=4)
 
         instructions = ("Are you ready to play one of the best games in the world?\n\n"
@@ -29,7 +29,7 @@ class Instruction_page(Frame):
 
         Button(self, text="Home Page",
                font="Courier 20",
-               fg="Dark Turquoise",
+               fg="darkorange",
                command=self.back_to_home
                ).grid(row=5, column=0, sticky=W)
 

@@ -35,14 +35,14 @@ class Home_page(Frame):
         Label(self, text="", bg="LightSteelBlue2"
               ).grid(row=2, column=1, sticky=N)
 
-        Button(self, text="Play",
+        Button(self, text="Play",fg = "Navy Blue",
                font="Courier 23", bd=5, command=self.single_player
                ).grid(row=3, column=1, sticky=N)
 
         Label(self, text="", bg="LightSteelBlue2"
               ).grid(row=4, column=1, sticky=N)
 
-        Button(self, text="Instructions",
+        Button(self, text="Instructions", fg = "Navy Blue",
                font="Courier 23", bd=5,
                command=self.instructions
                ).grid(row=5, column=1, sticky=N)
