@@ -1,7 +1,6 @@
 from tkinter import *
 from turtleHangman import Drawing, win
 
-
 class Play_screen(Frame):
 
     def __init__(self, master, choice, return_home, return_to_home):
@@ -71,6 +70,11 @@ class Play_screen(Frame):
                 column2 += 2
         Label(self, text=""
               ).grid(row=21, sticky=N)
+        Label(self, text=""
+              ).grid(row=22, sticky=N)
+        Label(self, text=""
+              ).grid(row=23, sticky=N)
+
 
     def create_letter_click_command(self, l):
         self.bodypartcount = 0
@@ -97,7 +101,6 @@ class Play_screen(Frame):
                 other += 1
 
         if self.bodypartcount == 9 or other == len(self.let_str):
-            Drawing.reset(self)
             self.back_to_home()
 
     def remove_body_part(self):
@@ -125,3 +128,4 @@ class Play_screen(Frame):
             self.return_home(self.choice)
         else:
             self.return_to_home()
+

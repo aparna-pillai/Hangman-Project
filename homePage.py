@@ -16,6 +16,9 @@ class Home_page(Frame):
         # create instruction label
         Label(self, text="", bg="LightSteelBlue2"
               ).grid(row=0, column=0, sticky=N)
+   def create_widgets(self):
+       Label(self, text="", bg = "LightSteelBlue2"
+             ).grid(row=0, column=0, sticky=N)
 
         Label(self, text="Welcome to", font="Courier 40 bold", bg="LightSteelBlue2",
               fg="Navy Blue").grid(row=0, column=1, sticky=N)
