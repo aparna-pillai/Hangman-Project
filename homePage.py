@@ -16,9 +16,11 @@ class Home_page(Frame):
         # create instruction label
         Label(self, text="", bg="LightSteelBlue2"
               ).grid(row=0, column=0, sticky=N)
-   def create_widgets(self):
-       Label(self, text="", bg = "LightSteelBlue2"
-             ).grid(row=0, column=0, sticky=N)
+
+
+    def create_widgets(self):
+        Label(self, text="", bg="LightSteelBlue2"
+              ).grid(row=0, column=0, sticky=N)
 
         Label(self, text="Welcome to", font="Courier 40 bold", bg="LightSteelBlue2",
               fg="Navy Blue").grid(row=0, column=1, sticky=N)
@@ -48,8 +50,10 @@ class Home_page(Frame):
         Label(self, text="", bg="LightSteelBlue2"
               ).grid(row=6, column=1, sticky=N)
 
+
     def single_player(self):
         self.call_on_other_selected()
+
 
     def instructions(self):
         self.call_on_selected()
