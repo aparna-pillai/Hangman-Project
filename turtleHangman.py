@@ -19,7 +19,7 @@ class Drawing(Frame):
 
     def stand(self):
         self.t = turtle.Turtle()
-        self.t.speed(0)
+        self.t.speed(5)
         self.t.setpos(0, 0)
         self.t.pencolor("firebrick")
         self.t.pensize(5)
@@ -49,8 +49,8 @@ class Drawing(Frame):
 
     def head(self):
         self.t.setpos(self.stand_end)
-        self.t.pencolor("peru")
-        self.t.fillcolor("peru")
+        self.t.pencolor("pink")
+        self.t.fillcolor("pink")
         self.t.begin_fill()
         self.t.circle(50)
         self.t.end_fill()
@@ -95,7 +95,7 @@ class Drawing(Frame):
 
     def leg1(self):
         self.t.setpos(self.arm2_end)
-        self.t.pencolor("pink")
+        self.t.pencolor("saddle brown")
         self.t.fd(100)
         self.t.up()
         self.t.rt(180)
@@ -106,7 +106,7 @@ class Drawing(Frame):
 
     def leg2(self):
         self.t.setpos(self.leg1_end)
-        self.t.pencolor("pink")
+        self.t.pencolor("saddle brown")
         self.t.fd(100)
         self.t.up()
         self.t.rt(180)
@@ -121,8 +121,8 @@ class Drawing(Frame):
 
     def eye1(self):
         self.t.pensize(1)
-        self.t.pencolor("black")
-        self.t.fillcolor("black")
+        self.t.pencolor("DodgerBlue")
+        self.t.fillcolor("DodgerBlue4")
         self.t.setpos(self.leg2_end)
         self.t.begin_fill()
         self.t.circle(5)
