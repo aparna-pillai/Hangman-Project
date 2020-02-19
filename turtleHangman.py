@@ -20,7 +20,7 @@ class Drawing(Frame):
 
    def stand(self):
        self.t = turtle.Turtle()
-       self.t.speed(5)
+       self.t.speed(0.5)
        self.t.setpos(0, 0)
        self.t.pencolor("firebrick")
        self.t.pensize(5)
@@ -50,8 +50,8 @@ class Drawing(Frame):
 
    def head(self):
        self.t.setpos(self.stand_end)
-       self.t.pencolor("pink")
-       self.t.fillcolor("pink")
+       self.t.pencolor("saddle brown")
+       self.t.fillcolor("saddle brown")
        self.t.begin_fill()
        self.t.circle(50)
        self.t.end_fill()
@@ -149,7 +149,7 @@ class Drawing(Frame):
 
    def mouth(self):
        self.t.setpos(self.eye2_end)
-       self.t.pencolor("sienna")
+       self.t.pencolor("red")
        self.t.pensize(3)
        self.t.circle(15, 180)
        self.t.up()
