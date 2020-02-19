@@ -2,7 +2,6 @@ import turtle
 from tkinter import *
 win = turtle.Screen()
 
-
 class Drawing(Frame):
    def __init__(self, master):
        super(Drawing, self).__init__(master)
